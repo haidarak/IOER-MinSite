@@ -24,7 +24,7 @@ class Member extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'member';
-	var $table = 'members';
+	var $table = 'member';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -109,6 +109,8 @@ class Member extends DataMapper {
 		return $this->where('status <>', 'closed')->get();
 	}
 	*/
+
+
 
 	// --------------------------------------------------------------------
 	// Custom Validation Rules

@@ -24,7 +24,7 @@ class Member_Layanan extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'member_daftar_layanan';
-	var $table = 'member_layanans';
+	var $table = 'member_layanan';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';

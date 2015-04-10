@@ -24,7 +24,7 @@ class Term extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'term';
-	// var $table = 'terms';
+	var $table = 'term';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';

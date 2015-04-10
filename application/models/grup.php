@@ -24,7 +24,7 @@ class Grup extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'grup_member';
-	var $table = 'grups';
+	var $table = 'grup';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';

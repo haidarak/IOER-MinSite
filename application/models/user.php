@@ -24,7 +24,7 @@ class User extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	//var $model = 'user';
-	var $table = 'users';
+	var $table = 'user';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -130,6 +130,38 @@ class User extends DataMapper {
 		return $this->where('status <>', 'closed')->get();
 	}
 	*/
+	public function register_user()
+	{
+		$u = new User();
+
+		$u->Nama = $this->input->post('nama');
+		$u->Email = $this->input->post('email');
+		$u->Password = md5($this->input->post('password'));
+		$u->Phone_Number = $this->input->post('phone');
+		$u->Flag = 1;
+
+		$u->save();
+		return true;
+	}
+
+	function login($email,$password)
+	{
+		$u = new User();
+		$u->get_where("Email",$email);
+		$u->get_where("Password",md5($password));
+
+		if($u->count()>0)
+		{
+			$userdata = array(
+				'username'  => $u->Email,
+				'flag'    => $u->Flag,
+				);
+			$this->session->set_userdata($userdata);
+			return true;
+		}
+		return false;
+	}
+
 
 	// --------------------------------------------------------------------
 	// Custom Validation Rules
