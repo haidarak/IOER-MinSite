@@ -19,7 +19,7 @@ class Kelola_Terms extends CI_Controller {
 	 */
 	public function index()
 	{
-
+        $this->load->view('admin/kelola_term');
 	}
 
 }

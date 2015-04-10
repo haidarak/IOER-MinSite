@@ -19,7 +19,7 @@ class Verifikasi_Pembayarans extends CI_Controller {
 	 */
 	public function index()
 	{
-
+        $this->load->view('admin/verifikasi_pembayaran');
 	}
 
 }

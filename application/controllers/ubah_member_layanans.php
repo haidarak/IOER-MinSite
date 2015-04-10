@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Kelola_Layanans extends CI_Controller {
+class Ubah_Member_Layanans extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,7 +19,7 @@ class Kelola_Layanans extends CI_Controller {
 	 */
 	public function index()
 	{
-
+        $this->load->view('admin/ubah_member_layanan');
 	}
 
 }

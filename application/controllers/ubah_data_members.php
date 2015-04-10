@@ -19,7 +19,7 @@ class Ubah_Data_Members extends CI_Controller {
 	 */
 	public function index()
 	{
-
+        $this->load->view('admin/ubah_data_member');
 	}
 
 }
