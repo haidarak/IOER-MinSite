@@ -42,7 +42,6 @@ class Courses extends CI_Controller {
 
         $data['courses']=$u;
         $this->load->view('course_view.php', $data);
-        
 	}
 
 }
