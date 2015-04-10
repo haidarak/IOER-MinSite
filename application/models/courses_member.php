@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Member_Daftar_Course DataMapper Model
+ * Courses_Member DataMapper Model
  *
- * Use this basic model as a member_daftar_course for creating new models.
+ * Use this basic model as a courses_member for creating new models.
  * It is not recommended that you include this file with your application,
- * especially if you use a Member_Daftar_Course library (as the classes may collide).
+ * especially if you use a Courses_Member library (as the classes may collide).
  *
  * To use:
  * 1) Copy this file to the lowercase name of your new model.
- * 2) Find-and-replace (case-sensitive) 'Member_Daftar_Course' with 'Your_model'
- * 3) Find-and-replace (case-sensitive) 'member_daftar_course' with 'your_model'
- * 4) Find-and-replace (case-sensitive) 'member_daftar_courses' with 'your_models'
+ * 2) Find-and-replace (case-sensitive) 'Courses_Member' with 'Your_model'
+ * 3) Find-and-replace (case-sensitive) 'courses_member' with 'your_model'
+ * 4) Find-and-replace (case-sensitive) 'courses_members' with 'your_models'
  * 5) Edit the file as desired.
  *
  * @license		MIT License
@@ -19,12 +19,12 @@
  * @author		Phil DeJarnett
  * @link		http://www.overzealous.com
  */
-class Member_Course extends DataMapper {
+class Courses_Member extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
-	// var $model = 'member_daftar_course';
-	var $table = 'member_courses';
+	// var $model = 'courses_member';
+	// var $table = 'courses_members';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -34,27 +34,27 @@ class Member_Course extends DataMapper {
 	//   Configure your relationships below
 	// --------------------------------------------------------------------
 
-	// Insert related models that Member_Daftar_Course can have just one of.
-	var $has_one = array('member','course');
+	// Insert related models that Courses_Member can have just one of.
+	var $has_one = array();
 
-	// Insert related models that Member_Daftar_Course can have more than one of.
+	// Insert related models that Courses_Member can have more than one of.
 	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('member_daftar_course'); // Member_Daftar_Course has one Member_Daftar_Course
+	 *   $has_one = array('user'); // Courses_Member has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
-	 * Member_Daftar_Course, use this form:
+	 * Courses_Member, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'member_daftar_course',
-	 *   		'other_field' => 'created_member_daftar_course'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_member_daftar_course' to Member_Daftar_Course, with class set to
-	 * 'member_daftar_course', and the other_field set to 'creator'!
+	 * Don't forget to add 'created_template' to User, with class set to
+	 * 'courses_member', and the other_field set to 'creator'!
 	 *
 	 */
 
@@ -64,33 +64,12 @@ class Member_Course extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newmember_daftar_course') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -125,7 +104,7 @@ class Member_Course extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_member_daftar_courses()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}
@@ -148,5 +127,5 @@ class Member_Course extends DataMapper {
 	*/
 }
 
-/* End of file member_daftar_course.php */
-/* Location: ./application/models/member_daftar_course.php */
+/* End of file courses_member.php */
+/* Location: ./application/models/courses_member.php */

@@ -24,7 +24,7 @@ class Member extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'member';
-	var $table = 'members';
+	// var $table = 'members';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -35,10 +35,10 @@ class Member extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that Member can have just one of.
-	var $has_one = array('user');
+	var $has_one = array();
 
 	// Insert related models that Member can have more than one of.
-	var $has_many = array('usercertificate','member_layanan','member_course','grup_member','pembayaran');
+	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
@@ -49,11 +49,11 @@ class Member extends DataMapper {
 	 *   $has_one = array(
 	 *   	'creator' => array(
 	 *   		'class' => 'user',
-	 *   		'other_field' => 'created_member'
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_member' to User, with class set to
+	 * Don't forget to add 'created_template' to User, with class set to
 	 * 'member', and the other_field set to 'creator'!
 	 *
 	 */
@@ -104,7 +104,7 @@ class Member extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_members()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}

@@ -23,8 +23,8 @@ class User extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
-	//var $model = 'user';
-	var $table = 'users';
+	// var $model = 'user';
+	// var $table = 'users';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -35,7 +35,7 @@ class User extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that User can have just one of.
-	var $has_one = array('member','tutor','manager');
+	var $has_one = array();
 
 	// Insert related models that User can have more than one of.
 	var $has_many = array();
@@ -64,33 +64,12 @@ class User extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'Email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'Name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'Password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'Phone_Number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newuser') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering

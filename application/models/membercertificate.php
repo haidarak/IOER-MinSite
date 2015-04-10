@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Tutor_Ajar_Course DataMapper Model
+ * Tembercertificate DataMapper Model
  *
- * Use this basic model as a tutor_ajar_course for creating new models.
+ * Use this basic model as a membercertificate for creating new models.
  * It is not recommended that you include this file with your application,
- * especially if you use a Tutor_Ajar_Course library (as the classes may collide).
+ * especially if you use a Tembercertificate library (as the classes may collide).
  *
  * To use:
  * 1) Copy this file to the lowercase name of your new model.
- * 2) Find-and-replace (case-sensitive) 'Tutor_Ajar_Course' with 'Your_model'
- * 3) Find-and-replace (case-sensitive) 'tutor_ajar_course' with 'your_model'
- * 4) Find-and-replace (case-sensitive) 'tutor_ajar_courses' with 'your_models'
+ * 2) Find-and-replace (case-sensitive) 'Tembercertificate' with 'Your_model'
+ * 3) Find-and-replace (case-sensitive) 'membercertificate' with 'your_model'
+ * 4) Find-and-replace (case-sensitive) 'membercertificates' with 'your_models'
  * 5) Edit the file as desired.
  *
  * @license		MIT License
@@ -19,12 +19,12 @@
  * @author		Phil DeJarnett
  * @link		http://www.overzealous.com
  */
-class Tutor_Course extends DataMapper {
+class Tembercertificate extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
-	// var $model = 'tutor_ajar_course';
-	var $table = 'tutor_courses';
+	// var $model = 'membercertificate';
+	// var $table = 'membercertificates';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -34,27 +34,27 @@ class Tutor_Course extends DataMapper {
 	//   Configure your relationships below
 	// --------------------------------------------------------------------
 
-	// Insert related models that Tutor_Ajar_Course can have just one of.
-	var $has_one = array('tutor','course');
+	// Insert related models that Tembercertificate can have just one of.
+	var $has_one = array();
 
-	// Insert related models that Tutor_Ajar_Course can have more than one of.
+	// Insert related models that Tembercertificate can have more than one of.
 	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('tutor_ajar_course'); // Tutor_Ajar_Course has one Tutor_Ajar_Course
+	 *   $has_one = array('user'); // Tembercertificate has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
-	 * Tutor_Ajar_Course, use this form:
+	 * Tembercertificate, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'tutor_ajar_course',
-	 *   		'other_field' => 'created_tutor_ajar_course'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_tutor_ajar_course' to Tutor_Ajar_Course, with class set to
-	 * 'tutor_ajar_course', and the other_field set to 'creator'!
+	 * Don't forget to add 'created_template' to User, with class set to
+	 * 'membercertificate', and the other_field set to 'creator'!
 	 *
 	 */
 
@@ -64,33 +64,12 @@ class Tutor_Course extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newtutor_ajar_course') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -125,7 +104,7 @@ class Tutor_Course extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_tutor_ajar_courses()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}
@@ -148,5 +127,5 @@ class Tutor_Course extends DataMapper {
 	*/
 }
 
-/* End of file tutor_ajar_course.php */
-/* Location: ./application/models/tutor_ajar_course.php */
+/* End of file membercertificate.php */
+/* Location: ./application/models/membercertificate.php */

@@ -24,7 +24,7 @@ class Manager extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'manager';
-	var $table = 'managers';
+	// var $table = 'managers';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -35,25 +35,25 @@ class Manager extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that Manager can have just one of.
-	var $has_one = array('user');
+	var $has_one = array();
 
 	// Insert related models that Manager can have more than one of.
 	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('manager'); // Manager has one Manager
+	 *   $has_one = array('user'); // Manager has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
 	 * Manager, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'manager',
-	 *   		'other_field' => 'created_manager'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_manager' to Manager, with class set to
+	 * Don't forget to add 'created_template' to User, with class set to
 	 * 'manager', and the other_field set to 'creator'!
 	 *
 	 */
@@ -64,33 +64,12 @@ class Manager extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newmanager') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -125,7 +104,7 @@ class Manager extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_managers()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}

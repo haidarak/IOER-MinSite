@@ -1,17 +1,17 @@
 <?php
 
 /**
- * User_Certificate DataMapper Model
+ * Layanans_Member DataMapper Model
  *
- * Use this basic model as a user_certificate for creating new models.
+ * Use this basic model as a layanans_member for creating new models.
  * It is not recommended that you include this file with your application,
- * especially if you use a User_Certificate library (as the classes may collide).
+ * especially if you use a Layanans_Member library (as the classes may collide).
  *
  * To use:
  * 1) Copy this file to the lowercase name of your new model.
- * 2) Find-and-replace (case-sensitive) 'User_Certificate' with 'Your_model'
- * 3) Find-and-replace (case-sensitive) 'user_certificate' with 'your_model'
- * 4) Find-and-replace (case-sensitive) 'user_certificates' with 'your_models'
+ * 2) Find-and-replace (case-sensitive) 'Layanans_Member' with 'Your_model'
+ * 3) Find-and-replace (case-sensitive) 'layanans_member' with 'your_model'
+ * 4) Find-and-replace (case-sensitive) 'layanans_members' with 'your_models'
  * 5) Edit the file as desired.
  *
  * @license		MIT License
@@ -19,12 +19,12 @@
  * @author		Phil DeJarnett
  * @link		http://www.overzealous.com
  */
-class UserCertificate extends DataMapper {
+class Layanans_Member extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
-	// var $model = 'user_certificate';
-	var $table = 'usercertificates';
+	// var $model = 'layanans_member';
+	// var $table = 'layanans_members';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -34,27 +34,27 @@ class UserCertificate extends DataMapper {
 	//   Configure your relationships below
 	// --------------------------------------------------------------------
 
-	// Insert related models that User_Certificate can have just one of.
-	var $has_one = array('member');
+	// Insert related models that Layanans_Member can have just one of.
+	var $has_one = array();
 
-	// Insert related models that User_Certificate can have more than one of.
+	// Insert related models that Layanans_Member can have more than one of.
 	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('user_certificate'); // User_Certificate has one User_Certificate
+	 *   $has_one = array('user'); // Layanans_Member has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
-	 * User_Certificate, use this form:
+	 * Layanans_Member, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'user_certificate',
-	 *   		'other_field' => 'created_user_certificate'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_user_certificate' to User_Certificate, with class set to
-	 * 'user_certificate', and the other_field set to 'creator'!
+	 * Don't forget to add 'created_template' to User, with class set to
+	 * 'layanans_member', and the other_field set to 'creator'!
 	 *
 	 */
 
@@ -64,33 +64,12 @@ class UserCertificate extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newuser_certificate') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -125,7 +104,7 @@ class UserCertificate extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_user_certificates()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}
@@ -148,5 +127,5 @@ class UserCertificate extends DataMapper {
 	*/
 }
 
-/* End of file user_certificate.php */
-/* Location: ./application/models/user_certificate.php */
+/* End of file layanans_member.php */
+/* Location: ./application/models/layanans_member.php */

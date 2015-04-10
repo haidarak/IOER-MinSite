@@ -24,7 +24,7 @@ class Tutor extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'tutor';
-	var $table = 'tutors';
+	// var $table = 'tutors';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -38,22 +38,22 @@ class Tutor extends DataMapper {
 	var $has_one = array();
 
 	// Insert related models that Tutor can have more than one of.
-	var $has_many = array('tutor_course');
+	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('tutor'); // Tutor has one Tutor
+	 *   $has_one = array('user'); // Tutor has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
 	 * Tutor, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'tutor',
-	 *   		'other_field' => 'created_tutor'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_tutor' to Tutor, with class set to
+	 * Don't forget to add 'created_template' to User, with class set to
 	 * 'tutor', and the other_field set to 'creator'!
 	 *
 	 */
@@ -64,33 +64,12 @@ class Tutor extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newtutor') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -125,7 +104,7 @@ class Tutor extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_tutors()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}

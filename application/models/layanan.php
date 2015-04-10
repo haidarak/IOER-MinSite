@@ -24,7 +24,7 @@ class Layanan extends DataMapper {
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'layanan';
-	var $table = 'layanan';
+	// var $table = 'layanans';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -38,29 +38,22 @@ class Layanan extends DataMapper {
 	var $has_one = array();
 
 	// Insert related models that Layanan can have more than one of.
-	var $has_many = array(
-		'course' => array(			// in the code, we will refer to this relation by using the object name 'book'
-            'class' => 'course',			// This relationship is with the model class 'book'
-            'other_field' => 'layanan',		// in the Book model, this defines the array key used to identify this relationship
-            'join_self_as' => 'Layanan',		// foreign key in the (relationship)table identifying this models table. The column name would be 'author_id'
-            'join_other_as' => 'Course',		// foreign key in the (relationship)table identifying the other models table as defined by 'class'. The column name would be 'book_id'
-            'join_table' => 'layanan_course'),
-		'member_layanan','layanan_course','pembayaran');
+	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('layanan'); // Layanan has one Layanan
+	 *   $has_one = array('user'); // Layanan has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
 	 * Layanan, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'layanan',
-	 *   		'other_field' => 'created_layanan'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_layanan' to Layanan, with class set to
+	 * Don't forget to add 'created_template' to User, with class set to
 	 * 'layanan', and the other_field set to 'creator'!
 	 *
 	 */
@@ -71,33 +64,12 @@ class Layanan extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newlayanan') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -132,7 +104,7 @@ class Layanan extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_layanans()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}

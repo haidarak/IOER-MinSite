@@ -43,7 +43,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar-collapse">
            <ul class="nav navbar-nav">
-              <li><a href="course.html">Course</a></li>
+              <li><a href="<?php echo base_url(); ?>">Course</a></li>
               <li><a href="#">Layanan</a></li>
               <li><a href="penyedia-layanan.html">Penyedia Layanan</a></li>
               <li><a href="#">Tentang Kami</a></li>
@@ -95,43 +95,20 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Manajer Pembayaran</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="verifikasi-pembayaran.html"><i class="fa fa-circle-o"></i> Verifikasi Pembayaran</a></li>
-              </ul>
-            </li>
+
             <li class="treeview active">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Manajer Layanan</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="kelola-layanan.html"><i class="fa fa-circle-o"></i> Kelola Layanan</a></li>
-                <li><a href="kelola-term.html"><i class="fa fa-circle-o"></i> Kelola Term</a></li>
+                <li class="active"><a href="<?php echo base_url('kelola_layanans'); ?>"><i class="fa fa-circle-o"></i> Kelola Layanan</a></li>
+                <li><a href="<?php echo base_url('kelola_terms'); ?>"><i class="fa fa-circle-o"></i> Kelola Term</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Kelola Penyedia Layanan</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Aktivasi Layanan</a></li>
               </ul>
             </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Manajer Course</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Kelola Course</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Manajer User</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> View Registrasi</a></li>
-                <li><a href="kelola-member.html"><i class="fa fa-circle-o"></i> Kelola Member</a></li>
-                <li><a href="ubah-member-layanan.html"><i class="fa fa-circle-o"></i> Deaktivasi User dari Layanan</a></li>
-              </ul>
-            </li>
+
+
           </ul>
         </section>
         <!-- /.sidebar -->

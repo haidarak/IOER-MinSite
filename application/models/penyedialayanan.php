@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Penyedia_Layanan DataMapper Model
+ * Penyedialayanan DataMapper Model
  *
- * Use this basic model as a penyedia_layanan for creating new models.
+ * Use this basic model as a penyedialayanan for creating new models.
  * It is not recommended that you include this file with your application,
- * especially if you use a Penyedia_Layanan library (as the classes may collide).
+ * especially if you use a Penyedialayanan library (as the classes may collide).
  *
  * To use:
  * 1) Copy this file to the lowercase name of your new model.
- * 2) Find-and-replace (case-sensitive) 'Penyedia_Layanan' with 'Your_model'
- * 3) Find-and-replace (case-sensitive) 'penyedia_layanan' with 'your_model'
- * 4) Find-and-replace (case-sensitive) 'penyedia_layanans' with 'your_models'
+ * 2) Find-and-replace (case-sensitive) 'Penyedialayanan' with 'Your_model'
+ * 3) Find-and-replace (case-sensitive) 'penyedialayanan' with 'your_model'
+ * 4) Find-and-replace (case-sensitive) 'penyedialayanans' with 'your_models'
  * 5) Edit the file as desired.
  *
  * @license		MIT License
@@ -19,12 +19,12 @@
  * @author		Phil DeJarnett
  * @link		http://www.overzealous.com
  */
-class PenyediaLayanan extends DataMapper {
+class Penyedialayanan extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
-	// var $model = 'penyedia_layanan';
-	var $table = 'penyedialayanans';
+	// var $model = 'penyedialayanan';
+	// var $table = 'penyedialayanans';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -34,27 +34,27 @@ class PenyediaLayanan extends DataMapper {
 	//   Configure your relationships below
 	// --------------------------------------------------------------------
 
-	// Insert related models that Penyedia_Layanan can have just one of.
+	// Insert related models that Penyedialayanan can have just one of.
 	var $has_one = array();
 
-	// Insert related models that Penyedia_Layanan can have more than one of.
+	// Insert related models that Penyedialayanan can have more than one of.
 	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('penyedia_layanan'); // Penyedia_Layanan has one Penyedia_Layanan
+	 *   $has_one = array('user'); // Penyedialayanan has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
-	 * Penyedia_Layanan, use this form:
+	 * Penyedialayanan, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'penyedia_layanan',
-	 *   		'other_field' => 'created_penyedia_layanan'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_penyedia_layanan' to Penyedia_Layanan, with class set to
-	 * 'penyedia_layanan', and the other_field set to 'creator'!
+	 * Don't forget to add 'created_template' to User, with class set to
+	 * 'penyedialayanan', and the other_field set to 'creator'!
 	 *
 	 */
 
@@ -64,33 +64,12 @@ class PenyediaLayanan extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newpenyedia_layanan') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -125,7 +104,7 @@ class PenyediaLayanan extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_penyedia_layanans()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}
@@ -148,5 +127,5 @@ class PenyediaLayanan extends DataMapper {
 	*/
 }
 
-/* End of file penyedia_layanan.php */
-/* Location: ./application/models/penyedia_layanan.php */
+/* End of file penyedialayanan.php */
+/* Location: ./application/models/penyedialayanan.php */

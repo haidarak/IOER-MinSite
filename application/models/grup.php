@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Grup_Member DataMapper Model
+ * Grup DataMapper Model
  *
- * Use this basic model as a grup_member for creating new models.
+ * Use this basic model as a grup for creating new models.
  * It is not recommended that you include this file with your application,
- * especially if you use a Grup_Member library (as the classes may collide).
+ * especially if you use a Grup library (as the classes may collide).
  *
  * To use:
  * 1) Copy this file to the lowercase name of your new model.
- * 2) Find-and-replace (case-sensitive) 'Grup_Member' with 'Your_model'
- * 3) Find-and-replace (case-sensitive) 'grup_member' with 'your_model'
- * 4) Find-and-replace (case-sensitive) 'grup_members' with 'your_models'
+ * 2) Find-and-replace (case-sensitive) 'Grup' with 'Your_model'
+ * 3) Find-and-replace (case-sensitive) 'grup' with 'your_model'
+ * 4) Find-and-replace (case-sensitive) 'grups' with 'your_models'
  * 5) Edit the file as desired.
  *
  * @license		MIT License
@@ -23,8 +23,8 @@ class Grup extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
-	// var $model = 'grup_member';
-	var $table = 'grups';
+	// var $model = 'grup';
+	// var $table = 'grups';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -34,27 +34,27 @@ class Grup extends DataMapper {
 	//   Configure your relationships below
 	// --------------------------------------------------------------------
 
-	// Insert related models that Grup_Member can have just one of.
+	// Insert related models that Grup can have just one of.
 	var $has_one = array();
 
-	// Insert related models that Grup_Member can have more than one of.
-	var $has_many = array('grup_member');
+	// Insert related models that Grup can have more than one of.
+	var $has_many = array();
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
-	 *   $has_one = array('grup_member'); // Grup_Member has one Grup_Member
+	 *   $has_one = array('user'); // Grup has one User
 	 *
 	 * For complex relationships, such as having a Creator and Editor for
-	 * Grup_Member, use this form:
+	 * Grup, use this form:
 	 *   $has_one = array(
 	 *   	'creator' => array(
-	 *   		'class' => 'grup_member',
-	 *   		'other_field' => 'created_grup_member'
+	 *   		'class' => 'user',
+	 *   		'other_field' => 'created_template'
 	 *   	)
 	 *   );
 	 *
-	 * Don't forget to add 'created_grup_member' to Grup_Member, with class set to
-	 * 'grup_member', and the other_field set to 'creator'!
+	 * Don't forget to add 'created_template' to User, with class set to
+	 * 'grup', and the other_field set to 'creator'!
 	 *
 	 */
 
@@ -64,33 +64,12 @@ class Grup extends DataMapper {
 	// --------------------------------------------------------------------
 
 	var $validation = array(
-
-		'email' => array(
-			'label' => 'Email',
-			'rules' => array('required', 'trim', 'unique', 'valid_email', 'max_length' => 30)
-		),
-		'name' => array(
-			'label' => 'Nama',
-			'rules' => array('required', 'unique', 'max_length' => 20)
-		),
-		'password' => array(
-			'label' => 'Password',
-			'rules' => array('required', 'trim', 'max_length' => 40, 'encrypt'),
-			'type' => 'password'
-		),
-		'phone_number' => array(
-			'label' => 'Nomor Telepon',
-			'rules' => array('required', 'max_length' =>15),
-			'type' => 'password'
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
 		)
-
 	);
-	
-	//print dirrectly
-	function __toString()
-	{
-		return empty($this->name) ? $this->localize_label('newgrup_member') : $this->name;
-	}
 
 	// --------------------------------------------------------------------
 	// Default Ordering
@@ -125,7 +104,7 @@ class Grup extends DataMapper {
 	// --------------------------------------------------------------------
 
 	/* Example Custom Method
-	function get_open_grup_members()
+	function get_open_templates()
 	{
 		return $this->where('status <>', 'closed')->get();
 	}
@@ -148,5 +127,5 @@ class Grup extends DataMapper {
 	*/
 }
 
-/* End of file grup_member.php */
-/* Location: ./application/models/grup_member.php */
+/* End of file grup.php */
+/* Location: ./application/models/grup.php */
