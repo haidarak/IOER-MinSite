@@ -101,8 +101,8 @@
                 <i class="fa fa-dashboard"></i> <span>Manajer Layanan</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="<?php echo base_url('kelola_layanans'); ?>"><i class="fa fa-circle-o"></i> Kelola Layanan</a></li>
-                <li><a href="<?php echo base_url('kelola_terms'); ?>"><i class="fa fa-circle-o"></i> Kelola Term</a></li>
+                <li class="active"><a href="<?php echo base_url('admin/kelola_layanans'); ?>"><i class="fa fa-circle-o"></i> Kelola Layanan</a></li>
+                <li><a href="<?php echo base_url('admin/kelola_terms'); ?>"><i class="fa fa-circle-o"></i> Kelola Term</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Kelola Penyedia Layanan</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Aktivasi Layanan</a></li>
               </ul>
