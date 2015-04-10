@@ -13,6 +13,8 @@ class Users extends CI_Controller {
 		{
 			echo "logged in";
 			// redirect(site_url('home'));
+			$this->session->sess_destroy();
+			echo "logged out";
 		}
 		else
 		{

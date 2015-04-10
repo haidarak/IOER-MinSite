@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Courses extends CI_Controller {
+class Ubah_Data_Members extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,22 +19,7 @@ class Courses extends CI_Controller {
 	 */
 	public function index()
 	{
-        $u = new Course();
-        $u->get();
-       // foreach( $u->get() as $i)
-       // {
-       // 		$i->layanan->get(1,0);
-       //      echo "Nama Course :".$i->nama."<br>";
-       //      echo "Biaya Course :".$i->layanan->biaya."<br>";
-       // }
-
-        // $u->get(1,2);
-        // $u->layanan->
-
-
-
-        $data['courses']=$u;
-        $this->load->view('course_view.php', $data);
+        $this->load->view('admin/ubah_data_member');
 	}
 
 }

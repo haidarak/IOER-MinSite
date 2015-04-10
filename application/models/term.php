@@ -38,7 +38,7 @@ class Term extends DataMapper {
 	var $has_one = array();
 
 	// Insert related models that Term can have more than one of.
-	var $has_many = array();
+	var $has_many = array('course','layanan');
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:

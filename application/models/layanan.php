@@ -35,10 +35,10 @@ class Layanan extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that Layanan can have just one of.
-	var $has_one = array();
+	var $has_one = array('penyedialayanan','term');
 
 	// Insert related models that Layanan can have more than one of.
-	var $has_many = array();
+	var $has_many = array('course','member');
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:

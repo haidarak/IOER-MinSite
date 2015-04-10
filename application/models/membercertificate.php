@@ -19,7 +19,7 @@
  * @author		Phil DeJarnett
  * @link		http://www.overzealous.com
  */
-class Tembercertificate extends DataMapper {
+class Membercertificate extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
@@ -35,7 +35,7 @@ class Tembercertificate extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that Tembercertificate can have just one of.
-	var $has_one = array();
+	var $has_one = array('member');
 
 	// Insert related models that Tembercertificate can have more than one of.
 	var $has_many = array();

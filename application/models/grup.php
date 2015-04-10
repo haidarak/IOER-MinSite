@@ -38,7 +38,7 @@ class Grup extends DataMapper {
 	var $has_one = array();
 
 	// Insert related models that Grup can have more than one of.
-	var $has_many = array();
+	var $has_many = array('member');
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:

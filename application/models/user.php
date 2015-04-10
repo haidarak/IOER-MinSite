@@ -35,7 +35,7 @@ class User extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that User can have just one of.
-	var $has_one = array();
+	var $has_one = array('member','manager','tutor');
 
 	// Insert related models that User can have more than one of.
 	var $has_many = array();

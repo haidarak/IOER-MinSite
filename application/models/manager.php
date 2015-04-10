@@ -35,7 +35,7 @@ class Manager extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that Manager can have just one of.
-	var $has_one = array();
+	var $has_one = array('user');
 
 	// Insert related models that Manager can have more than one of.
 	var $has_many = array();

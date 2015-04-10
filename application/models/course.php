@@ -35,10 +35,10 @@ class Course extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that Course can have just one of.
-	var $has_one = array();
+	var $has_one = array('tutor');
 
 	// Insert related models that Course can have more than one of.
-	var $has_many = array();
+	var $has_many = array('layanan','member');
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:

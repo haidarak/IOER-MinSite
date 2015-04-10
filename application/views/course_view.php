@@ -122,11 +122,11 @@
                 echo '
                 <div class="box">
                   <div class="box-header with-border">
-                    <h3 class="box-title">'.$course->Nama.'</h3>
+                    <h3 class="box-title">'.$course->nama.'</h3>
                     <small class="text-aqua">Nama Universitas Penyedia Coursenya</small>
                   </div>
                   <div class="box-body">
-                  <p>'.$course->Deskripsi.'</p>
+                  <p>'.$course->deskripsi.'</p>
                     <div class="text-right">
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal"><i class="fa fa-plus"></i>&nbsp; Enroll Course</button>
                     </div>
