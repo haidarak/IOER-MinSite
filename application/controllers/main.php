@@ -23,7 +23,7 @@ class Main extends CI_Controller {
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_table('course');
+        $crud->set_table('courses');
         $crud->set_subject('Course');
         // $crud->columns('lastName','firstName','email','jobTitle');
         // $crud->display_as('lastName','Last Name');`
@@ -36,7 +36,7 @@ class Main extends CI_Controller {
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_table('term');
+        $crud->set_table('terms');
         $crud->set_subject('Term');
         $output = $crud->render();
 
@@ -47,7 +47,7 @@ class Main extends CI_Controller {
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_table('user');
+        $crud->set_table('users');
         $crud->set_subject('User');
         $output = $crud->render();
 
