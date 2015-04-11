@@ -101,16 +101,13 @@
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-        </header>
-      
+      </header>
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container-fluid">
           <!-- Content Header (Page header) -->
           <section class="content-header">
-            <h1>
-              Course
-            </h1>
+            <br>
             <ol class="breadcrumb">
               <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Beranda</a></li>
             </ol>
@@ -119,59 +116,40 @@
           <!-- Main content -->
           <section class="content">
             <div class="row">
-              <span class="col-sm-6 col-sm-offset-2">
-                <!-- Loop Courses-->
-                <?php
-                foreach ($courses as $course) {
-                echo '
-                <div class="box">
-                  <div class="box-header with-border">
-                    <h3 class="box-title">'.$course->nama.'</h3>
-                    <small class="text-aqua">Nama Universitas Penyedia Coursenya</small>
-                  </div>
-                  <div class="box-body">
-                  <p>'.$course->deskripsi.'</p>
-                    <div class="text-right">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal"><i class="fa fa-plus"></i>&nbsp; Enroll Course</button>
+                <div class="jumbotron bg-navy">
+                    <div class="container">
+                        <h1>Take the Indonesia's best courses. <br> Online and free.</h1>
+                        <a href=""><h3>Learn more <i class="fa fa-arrow-circle-o-right"></i></h3></a>
                     </div>
-                    <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Upload Bukti Pembayaran</h4>
-                              </div>
-                              <div class="modal-body">
-                                <form role="form"><input type="file"></form>
-                                <p>C://My Computer/Document/Bukti Pembayaran.pdf</p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Upload</button>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                </div> 
-                ';
-                }
-                ?>
-                <!-- tutup box-->
-              </span>
-              <!-- Side bar kategori -->
-              <!-- <span class="col-sm-3 ">
-                <div class="box">
-                  <div class="box-header with-border">
-                    <h3 class="box-title">Kategori</h3>
-                  </div>
-                  <div class="box-body">
-                    awdadw
-                  </div>
                 </div>
-              </div>
-            </span> -->
-            <!-- end of sidebar kategori -->
+            </div>
+            <h1 class="page-header text-center">Most Popular</h1>
+            <div class="box box-default">
+                <div class="row">
+                    <div class="box-body col-md-8 col-md-offset-2">
+                       <div class="col-md-3">
+                        <img style="height:100px" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/24/5b8bd0352c11e49acdcfd9c2fca6c5/Course-Image3200x1800.png?auto=format&dpr=1&w=220&h=">
+                        <p class="lead text-light-blue text-no-margin">Judul Course</p>
+                        <p>Penyedia Layanan</p>
+                       </div>
+                        <div class="col-md-3">
+                            <img style="height:100px" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/29/753da0352c11e494bcf927fb09cbc9/MOOCMap-highres.png?auto=format&dpr=1&w=220&h="> 
+                            <p class="lead text-light-blue text-no-margin">Judul Course</p>
+                            <p>Penyedia Layanan</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img style="height:100px" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ce/4a3380352c11e48239673584835daa/Course-Logo.png?auto=format&dpr=1&w=220&h=">
+                            <p class="lead text-light-blue text-no-margin">Judul Course</p>
+                            <p>Penyedia Layanan</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img style="height:100px" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/fa/b623100b2a11e491808b11e17df7d4/S-ent-pic.jpg?auto=format&dpr=1&w=220&h=">
+                            <p class="lead text-light-blue text-no-margin">Judul Course</p>
+                            <p>Penyedia Layanan</p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
           </section><!-- /.content -->
         </div><!-- /.container -->
       </div><!-- /.content-wrapper -->
@@ -194,7 +172,7 @@
     <!-- SlimScroll -->
     <script src="<?php echo asset_url();?>plugins/slimScroll/jquery.slimScroll.min.js" type="text/javascript"></script>
     <!-- FastClick -->
-    <script src='<?php echo asset_url();?>plugins/fastclick/fastclick.min.js'></script>
+    <script src="<?php echo asset_url();?>plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?php echo asset_url();?>dist/js/app.min.js" type="text/javascript"></script> 
   </body>

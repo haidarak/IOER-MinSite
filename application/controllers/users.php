@@ -18,7 +18,7 @@ class Users extends CI_Controller {
 		}
 		else
 		{
-			$this->load->view("register_view");
+			$this->load->view("register_view2");
 		}
 	}
 
@@ -52,12 +52,12 @@ class Users extends CI_Controller {
 					);
 				$this->session->set_userdata($userdata);
 				echo "berhasil login email: ".$this->session->userdata('email').$this->session->userdata('flag');
-				$this->load->view('register_view');
+				$this->load->view('register_view2');
 				$this->session->sess_destroy();
 			}
 			else{
 				echo "gagal login";
-				$this->load->view('register_view');
+				$this->load->view('register_view2');
 			}
 		}
 	}
@@ -65,7 +65,7 @@ class Users extends CI_Controller {
 
 	public function register()
 	{
-		$this->load->view('register_view');//loads the register_view.php file in views folder
+		$this->load->view('register_view2');//loads the register_view2.php file in views folder
 	}
 
 	public function do_register()
@@ -77,7 +77,7 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules($rules);
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('register_view');
+			$this->load->view('register_view2');
 		}
 		else
 		{

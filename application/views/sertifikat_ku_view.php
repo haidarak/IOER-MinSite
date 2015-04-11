@@ -101,77 +101,50 @@
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-        </header>
-      
+      </header>
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container-fluid">
           <!-- Content Header (Page header) -->
           <section class="content-header">
-            <h1>
-              Course
-            </h1>
+            <h1>Daftar Sertifikat yang Didapat</h1>
             <ol class="breadcrumb">
               <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Beranda</a></li>
             </ol>
           </section>
-  
           <!-- Main content -->
           <section class="content">
-            <div class="row">
-              <span class="col-sm-6 col-sm-offset-2">
-                <!-- Loop Courses-->
-                <?php
-                foreach ($courses as $course) {
-                echo '
-                <div class="box">
-                  <div class="box-header with-border">
-                    <h3 class="box-title">'.$course->nama.'</h3>
-                    <small class="text-aqua">Nama Universitas Penyedia Coursenya</small>
-                  </div>
-                  <div class="box-body">
-                  <p>'.$course->deskripsi.'</p>
-                    <div class="text-right">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal"><i class="fa fa-plus"></i>&nbsp; Enroll Course</button>
-                    </div>
-                    <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Upload Bukti Pembayaran</h4>
-                              </div>
-                              <div class="modal-body">
-                                <form role="form"><input type="file"></form>
-                                <p>C://My Computer/Document/Bukti Pembayaran.pdf</p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Upload</button>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                </div> 
-                ';
-                }
-                ?>
-                <!-- tutup box-->
-              </span>
-              <!-- Side bar kategori -->
-              <!-- <span class="col-sm-3 ">
-                <div class="box">
-                  <div class="box-header with-border">
-                    <h3 class="box-title">Kategori</h3>
-                  </div>
-                  <div class="box-body">
-                    awdadw
-                  </div>
-                </div>
+          <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">Course</h3>
               </div>
-            </span> -->
-            <!-- end of sidebar kategori -->
+              <div class="box-body no-padding">
+                <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <td>DDP</td>
+                        <td><a href="#">Download</a></td>
+                      </tr>
+                      <tr>
+                        <td>SDA</td>
+                        <td><a href="#">Download</a></td>
+                      </tr>
+                      <tr>
+                        <td>Statprob</td>
+                        <td><a href="#">Download</a></td>
+                      </tr>
+                      <tr>
+                        <td>Riset Operasi</td>
+                        <td><a href="#">Download</a></td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>    
+          </div>
+          </div>
           </section><!-- /.content -->
         </div><!-- /.container -->
       </div><!-- /.content-wrapper -->
@@ -194,8 +167,8 @@
     <!-- SlimScroll -->
     <script src="<?php echo asset_url();?>plugins/slimScroll/jquery.slimScroll.min.js" type="text/javascript"></script>
     <!-- FastClick -->
-    <script src='<?php echo asset_url();?>plugins/fastclick/fastclick.min.js'></script>
+    <script src="<?php echo asset_url();?>plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?php echo asset_url();?>dist/js/app.min.js" type="text/javascript"></script> 
+    <script src="<?php echo asset_url();?>dist/js/app.min.js" type="text/javascript"></script>   
   </body>
 </html>
