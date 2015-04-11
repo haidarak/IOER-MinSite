@@ -123,7 +123,6 @@
                 <div class="box">
                   <div class="box-header with-border">
                     <h3 class="box-title">'.$course->nama.'</h3>
-                    <small class="text-aqua">Nama Universitas Penyedia Coursenya</small>
                   </div>
                   <div class="box-body">
                   <p>'.$course->deskripsi.'</p>
@@ -153,8 +152,7 @@
                 ';
                 }
                 ?>
-                <!-- tutup box-->
-              </span>
+              </span>  <!-- tutup box-->
               <!-- Side bar kategori -->
               <!-- <span class="col-sm-3 ">
                 <div class="box">

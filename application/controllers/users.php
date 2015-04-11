@@ -42,19 +42,23 @@ class Users extends CI_Controller {
 			// echo $this->input->post('l_email');
 			// echo md5($this->input->post('l_pass'));
 			// echo $u->result_count();
-			// echo $u->Email;
+			// echo $u->email;
 			if($u->result_count()==1)
 			{
-				// echo "nemunya, email: ".$u->Email." pass: ".$u->Password;
+				// echo "nemunya, email: ".$u->email." pass: ".$u->password;
 				$userdata = array(
-					'email'  => $u->Email,
-					'flag'    => $u->Flag,
+					'email'  => $u->email,
+					'flag'    => $u->flag,
 					);
 				$this->session->set_userdata($userdata);
 				echo "berhasil login email: ".$this->session->userdata('email').$this->session->userdata('flag');
-				// $this->session->sess_destroy();
+				$this->load->view('register_view');
+				$this->session->sess_destroy();
 			}
-			$this->load->view('register_view');
+			else{
+				echo "gagal login";
+				$this->load->view('register_view');
+			}
 		}
 	}
 
