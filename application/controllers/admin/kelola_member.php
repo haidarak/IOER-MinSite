@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Tambah_Members extends CI_Controller {
+class Kelola_Member extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,7 +19,7 @@ class Tambah_Members extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->view('admin/tambah_member');
+        $this->load->view('admin/kelola_member');
 	}
 
 }
