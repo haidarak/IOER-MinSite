@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>Indonesia Open Educational Resource</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+      <!--grocery -->
+      <?php
+      foreach($css_files as $file): ?>
+          <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+
+      <?php endforeach; ?>
+      <?php foreach($js_files as $file): ?>
+
+          <script src="<?php echo $file; ?>"></script>
+      <?php endforeach; ?>
     <!-- Bootstrap 3.3.2 -->
     <link href="<?php echo asset_url();?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -101,8 +111,8 @@
                 <i class="fa fa-dashboard"></i> <span>Manajer Layanan</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="<?php echo base_url('admin/kelola_layanans'); ?>"><i class="fa fa-circle-o"></i> Kelola Layanan</a></li>
-                <li><a href="<?php echo base_url('admin/kelola_terms'); ?>"><i class="fa fa-circle-o"></i> Kelola Term</a></li>
+                <li class="active"><a href="<?php echo base_url('admin/kelola_layanan'); ?>"><i class="fa fa-circle-o"></i> Kelola Layanan</a></li>
+                <li><a href="<?php echo base_url('admin/kelola_term'); ?>"><i class="fa fa-circle-o"></i> Kelola Term</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Kelola Penyedia Layanan</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Aktivasi Layanan</a></li>
               </ul>
@@ -132,84 +142,10 @@
         
         <!-- Your Page Content Here -->
         <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
-            <!-- Daftar kelas box-->
-            
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title">Daftar Member</h3>
-              </div><!-- /.box-header -->
-              <div class="box-body">
-                <table id="tableCourse" class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th class="col-md-4">Nama</th>
-                      <th class="col-md-3">Term</th>
-                      <th char="col-md-3">Penyedia</th>
-                      <th class="col-md-2">Kelola</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Pemrograman</td>
-                      <td>Gasal 2014/2015</td>
-                      <td>Cisco</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Pemrograman</td>
-                      <td>Gasal 2014/2015</td>
-                      <td>Fasilkom</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Pemrograman 2</td>
-                      <td>Genap 2014/2015</td>
-                      <td>Cisco</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Pemrograman 2</td>
-                      <td>Genap 2014/2015</td>
-                      <td>Fasilkom</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div><!-- /.box-body -->
-              <div class="box-footer">
-                <a href="tambah-member.html"><button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; Tambah Member</button></a>
-              </div> <!-- box footer -->
-            </div><!-- /.box -->
-          </div>
+            <div class="col-sm-8 col-sm-offset-2">
+                        <?php echo $output; ?>
+                </div>
+
         </div> <!-- row -->
       </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

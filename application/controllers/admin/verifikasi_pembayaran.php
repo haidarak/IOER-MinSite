@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Verifikasi_Pembayarans extends CI_Controller {
+class Verifikasi_Pembayaran extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,7 +18,7 @@ class Verifikasi_Pembayarans extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+    {
         $this->load->view('admin/verifikasi_pembayaran');
 	}
 

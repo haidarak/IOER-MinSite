@@ -95,41 +95,15 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Manajer Pembayaran</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="verifikasi-pembayaran.html"><i class="fa fa-circle-o"></i> Verifikasi Pembayaran</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Manajer Layanan</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="kelola-layanan.html"><i class="fa fa-circle-o"></i> Kelola Layanan</a></li>
-                <li><a href="kelola-term.html"><i class="fa fa-circle-o"></i> Kelola Term</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Kelola Penyedia Layanan</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Aktivasi Layanan</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Manajer Course</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Kelola Course</a></li>
-              </ul>
-            </li>
+  
             <li class="treeview active">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Manajer User</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i> View Registrasi</a></li>
-                <li><a href="kelola-member.html"><i class="fa fa-circle-o"></i> Kelola Member</a></li>
-                <li class="active"><a href="ubah-member-layanan.html"><i class="fa fa-circle-o"></i> Deaktivasi User dari Layanan</a></li>
+                <li><a href="<?php echo base_url('admin/kelola_member'); ?>"><i class="fa fa-circle-o"></i> Kelola Member</a></li>
+                <li class="active"><a href="<?php echo base_url('admin/ubah_member_layanan'); ?>"><i class="fa fa-circle-o"></i> Deaktivasi User dari Layanan</a></li>
               </ul>
             </li>
           </ul>
