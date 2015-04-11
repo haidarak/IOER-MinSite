@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Indonesia Open Educational Resource</title>
+    <title>Penyedia Layanan | Indonesia Open Educational Resource</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="<?php echo asset_url();?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@
         <nav class="navbar navbar-static-top">
           <div class="container-fluid">
           <div class="navbar-header">
-            <a href="home.html" class="navbar-brand">IOER</a>
+            <a href="index2.html" class="navbar-brand">IOER</a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
               <i class="fa fa-bars"></i>
             </button>
@@ -43,10 +43,9 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar-collapse">
            <ul class="nav navbar-nav">
-              <li><a href="<?php echo base_url('course')?>">Course</a></li>
-              <li><a href="<?php echo base_url('layanan')?>">Layanan</a></li>
-              <li><a href="<?php echo base_url('penyedia_layanan')?>">Penyedia Layanan</a></li>
-              <li><a href="<?php echo base_url('tentang_kami')?>">Tentang Kami</a></li>
+              <li><a href="<?php echo base_url("course");?>">Course</a></li>
+              <li><a href="<?php echo base_url("layanan");?>">Layanan</a></li>
+              <li class="active"><a href="<?php echo base_url("penyedia_layanan");?>">Penyedia Layanan</a><span class="sr-only">(current)</span></li>
             </ul>
 
             <!-- navbar right profile-->
@@ -67,27 +66,27 @@
                   <li class="user-header">
                     <img src="<?php echo asset_url();?>dist/img/user1-128x128.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      Nama Member
-                      <small>Member</small>
+                      Nama tutor
+                      <small>Tutor</small>
                     </p>
                   </li>
                   <!-- User Body -->
                   <li class="user-body">
-                    <a href="<?php echo base_url('layananku')?>">Layanan-ku</a>     
+                    <a href="#">Layanan-ku</a>     
                   </li>
                   <li class="user-body">
-                    <a href="<?php echo base_url('course_ku')?>">Course-ku</a>     
+                    <a href="#">Course-ku</a>     
                   </li>
                   <li class="user-body">
-                    <a href="<?php echo base_url('nilaiku')?>">Nilai-ku</a>     
+                    <a href="#">Nilai-ku</a>     
                   </li>
                   <li class="user-body">
-                    <a href="<?php echo base_url('sertifikatku')?>">Sertifikat-ku</a>     
+                    <a href="#">Sertifikat-ku</a>     
                   </li>
-                  <!-- User Footer-->
+                  <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="<?php echo base_url('profile')?>" class="btn btn-default btn-flat">Profile</a>
+                      <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="#" class="btn btn-default btn-flat">Sign out</a>
@@ -101,16 +100,13 @@
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-        </header>
-      
+      </header>
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container-fluid">
           <!-- Content Header (Page header) -->
           <section class="content-header">
-            <h1>
-              Course
-            </h1>
+            <h2 class="text-center">Meet our Partners</h2>  
             <ol class="breadcrumb">
               <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Beranda</a></li>
             </ol>
@@ -119,59 +115,24 @@
           <!-- Main content -->
           <section class="content">
             <div class="row">
-              <span class="col-sm-6 col-sm-offset-2">
-                <!-- Loop Courses-->
-                <?php
-                foreach ($courses as $course) {
-                echo '
                 <div class="box">
-                  <div class="box-header with-border">
-                    <h3 class="box-title">'.$course->Nama.'</h3>
-                    <small class="text-aqua">Nama Universitas Penyedia Coursenya</small>
+                  <div class="box-header with-border text-center">
+                      <h4>
+                      <a href="">Jakarta</a>
+                      <a href="">Bandung</a>
+                      <a href="">Surabaya</a>
+                      </h4>
                   </div>
                   <div class="box-body">
-                  <p>'.$course->Deskripsi.'</p>
-                    <div class="text-right">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal"><i class="fa fa-plus"></i>&nbsp; Enroll Course</button>
+                    <div class="text-center">
+                      <img class="btn bg-gray" style="height:100px" src="http://www.ui.ac.id/wp-content/uploads/2014/07/xmakara-web.png.pagespeed.ic.oD-vJapvKg.png"> 
+                      <img class="btn bg-gray" style="height:100px" src="http://www.itb.ac.id/img/logo-itb.png">   
+                      <img class="btn bg-gray" style="height:100px" src="https://www.its.ac.id/images/v2/its_logo-white.png">
+                      <img class="btn bg-gray" style="height:100px" src="http://binus.ac.id/wp-content/themes/binus-2014-58-core/assets/university/site-logo/site-logo-lg.png">
+                
                     </div>
-                    <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Upload Bukti Pembayaran</h4>
-                              </div>
-                              <div class="modal-body">
-                                <form role="form"><input type="file"></form>
-                                <p>C://My Computer/Document/Bukti Pembayaran.pdf</p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Upload</button>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                </div> 
-                ';
-                }
-                ?>
-                <!-- tutup box-->
-              </span>
-              <!-- Side bar kategori -->
-              <!-- <span class="col-sm-3 ">
-                <div class="box">
-                  <div class="box-header with-border">
-                    <h3 class="box-title">Kategori</h3>
-                  </div>
-                  <div class="box-body">
-                    awdadw
                   </div>
                 </div>
-              </div>
-            </span> -->
-            <!-- end of sidebar kategori -->
           </section><!-- /.content -->
         </div><!-- /.container -->
       </div><!-- /.content-wrapper -->
