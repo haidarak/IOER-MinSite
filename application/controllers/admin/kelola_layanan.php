@@ -25,9 +25,10 @@ class Kelola_Layanan extends CI_Controller {
 
         $listLayanan->set_table('layanans')
         ->set_subject('Daftar Layanan')
-        ->columns('id','nama','jenis','biaya','deskripsi')
-        ->display_as('ID', 'Nama', 'Jenis', 'Biaya', 'Deskripsi');
-        $listLayanan->set_relation('term', 'terms', 'term_id');
+        ->columns('id','nama','jenis','biaya','deskripsi','term_id');
+        $listLayanan->display_as('term_id', 'Term');
+        $listLayanan->display_as('id', 'ID');
+        $listLayanan->set_relation('term_id', 'terms', 'id');
 
         $output = $listLayanan->render();
         $this->load->view('admin/kelola_layanan', $output);
