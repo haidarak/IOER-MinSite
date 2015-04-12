@@ -17,10 +17,37 @@ class Kelola_Term extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	function __construct()
+    {
+        parent::__construct();
+ 
+        /* Standard Libraries of codeigniter are required */
+        $this->load->database();
+        $this->load->helper('url');
+        /* ------------------ */ 
+ 
+        $this->load->library('grocery_CRUD');
+ 
+    }
+    
+    public function index()
 	{
         $this->load->view('admin/kelola_term');
 	}
+    
+    public function term()
+    {
+        $this->grocery_crud->set_table('term');
+        $output = $this->grocery_crud->render();
+ 
+        $this->_example_output($output);        
+    }
+    
+    function _example_output($output = null)
+ 
+    {
+        $this->load->view('admin/kelola_term.php',$output);    
+    }
 
 }
 

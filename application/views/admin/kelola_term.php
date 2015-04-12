@@ -2,6 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <?php 
+foreach($css_files as $file): ?>
+    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+ 
+<?php endforeach; ?>
+<?php foreach($js_files as $file): ?>
+ 
+    <script src="<?php echo $file; ?>"></script>
+<?php endforeach; ?>
     <title>Indonesia Open Educational Resource</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
@@ -118,7 +127,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Kelola Member
+          Kelola Term
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-home"></i> Beranda</a></li>
@@ -135,60 +144,7 @@
             
             <div class="box">
               <div class="box-body">
-                <table id="tableCourse" class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th class="col-md-6">Term</th>
-                      <th char="col-md-2">Kelola</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Gasal 2014/2015</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Genap 2014/2015</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Gasal 2015/2016</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Genap 2015/2016</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                 <?php echo $output; ?>
               </div><!-- /.box-body -->
               <div class="box-footer">
                 <a href="tambah-member.html"><button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; Tambah Member</button></a>
