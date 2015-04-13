@@ -19,7 +19,10 @@ class Verifikasi_Pembayaran extends CI_Controller {
 	 */
 	public function index()
     {
-        $this->load->view('admin/verifikasi_pembayaran');
+
+        $listMember = new Member();
+        $listMember->get(1,10);
+        $this->load->view('admin/verifikasi_pembayaran', $listMember);
 	}
 
 }
