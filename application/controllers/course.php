@@ -19,29 +19,7 @@ class Course extends CI_Controller {
 	 */
 	public function index()
 	{
-//        $u = new Course();
-//        $u->get();
-//        // echo $u;
-//       foreach( $u->get() as $i)
-//       {
-//       		$i->layanan->get(1,0);
-//            echo "Biaya Course :".$i->layanan->Biaya."<br>";
-//            //print_r($i->layanan->get());
-//            echo "Nama Course :".$i->Nama."<br>";
-//
-//            // print_r($i->layanan);
-//       }
-//
-//       $l = new layanan();
-//       $l->get(1,0);
-//       echo "Biaya Layanan: ".$l->Biaya.'<br>';
-//
-//       $lc = new Layanan_Course();
-//       $lc->get(1,0);
-//       echo "Layanan - Course: ".$lc->Layanan_id.' - '.$lc->Course_id.'<br>';
-//
-//        $data['courses']=$u;
-        $this->load->view('course_view.php');
+      redirect('courses');
 	}
 
 }

@@ -34,30 +34,30 @@
 
       <div class="register-box-body">
         <p class="login-box-msg">Register a new membership</p>
-        <form action="../../index.html" method="post">
+        <form action="<?php echo base_url().'users/do_register'; ?>" method="post" required>
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Full name"/>
+            <input type="text" class="form-control" placeholder="Full name" name="r_nama" required/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Email"/>
+            <input type="text" class="form-control" placeholder="Email" name="r_email" required/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password"/>
+            <input type="password" class="form-control" placeholder="Password" name="r_password" required/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Retype password"/>
-            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            <input type="text" class="form-control" placeholder="No Handphone" name="r_phone" required/>
+            <span class="glyphicon glyphicon-phone form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-7 col-xs-offset-1">    
-              <div class="checkbox icheck">
+              <!-- <div class="checkbox icheck">
                 <label>
                   <input type="checkbox"> I agree to the <a href="#">terms</a>
                 </label>
-              </div>                        
+              </div> -->                        
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
@@ -69,6 +69,29 @@
         </form>        
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
+    
+    <?php 
+    if (isset($notif)){
+      echo '
+      <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">'.$notif.'</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>'.$notifmsg.'</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+      ';
+    };
+    ?>
 
     <!-- jQuery 2.1.3 -->
     <script src="<?php echo asset_url();?>plugins/jQuery/jQuery-2.1.3.min.js"></script>
@@ -82,6 +105,7 @@
     <script src="<?php echo asset_url();?>dist/js/app.min.js" type="text/javascript"></script> 
     <script>
       $(function () {
+        $("#errorModal").modal("show");
         $('input').iCheck({
           checkboxClass: 'icheckbox_square-blue',
           radioClass: 'iradio_square-blue',

@@ -51,53 +51,8 @@
 
             <!-- navbar right profile-->
              <!-- Navbar Right Menu -->
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- User Account Menu -->
-              <li class="dropdown user user-menu">
-                <!-- Menu Toggle Button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- The user image in the navbar-->
-                  <img src="<?php echo asset_url();?>dist/img/user1-128x128.jpg" class="user-image" alt="User Image"/>
-                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Nama tutor</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- The user image in the menu -->
-                  <li class="user-header">
-                    <img src="<?php echo asset_url();?>dist/img/user1-128x128.jpg" class="img-circle" alt="User Image" />
-                    <p>
-                      Nama Member
-                      <small>Member</small>
-                    </p>
-                  </li>
-                  <!-- User Body -->
-                  <li class="user-body">
-                    <a href="<?php echo base_url('layananku')?>">Layanan-ku</a>     
-                  </li>
-                  <li class="user-body">
-                    <a href="<?php echo base_url('course_ku')?>">Course-ku</a>     
-                  </li>
-                  <li class="user-body">
-                    <a href="<?php echo base_url('nilaiku')?>">Nilai-ku</a>     
-                  </li>
-                  <li class="user-body">
-                    <a href="<?php echo base_url('sertifikatku')?>">Sertifikat-ku</a>     
-                  </li>
-                  <!-- User Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="<?php echo base_url('profile')?>" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
+          <?php $this->view('sidebar_member_template');?>
+          
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>

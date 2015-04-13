@@ -49,15 +49,18 @@ class Users extends CI_Controller {
 				$userdata = array(
 					'email'  => $u->email,
 					'flag'    => $u->flag,
+					'nama'    => $u->nama,
 					);
 				$this->session->set_userdata($userdata);
-				echo "berhasil login email: ".$this->session->userdata('email').$this->session->userdata('flag');
-				$this->load->view('register_view2');
-				$this->session->sess_destroy();
+				// echo "berhasil login email: ".$this->session->userdata('email').$this->session->userdata('flag');
+				// $this->load->view('beranda_view');
+				redirect('/courses');
+				// $this->session->sess_destroy();
 			}
 			else{
-				echo "gagal login";
-				$this->load->view('register_view2');
+				$data['notif']="Login Gagal";
+				$data['notifmsg']="Kombinasi email & password salah";
+				$this->load->view('beranda_view',$data);
 			}
 		}
 	}
@@ -70,33 +73,43 @@ class Users extends CI_Controller {
 
 	public function do_register()
 	{
-		$rules = array(
-			array('field'=>'nama','label'=>'Nama','rules'=>'trim|required|min_length[4]|max_length[12]'),
-			array('field'=>'password','label'=>'Password','rules'=>'trim|required|min_length[6]'),
-			);
-		$this->form_validation->set_rules($rules);
-		if($this->form_validation->run() == FALSE)
-		{
-			$this->load->view('register_view2');
-		}
-		else
-		{
+		// $rules = array(
+		// 	array('field'=>'r_nama','label'=>'Nama','rules'=>'trim|required|min_length[4]|max_length[12]'),
+		// 	array('field'=>'r_password','label'=>'Password','rules'=>'trim|required|min_length[6]'),
+		// 	);
+		// $this->form_validation->set_rules($rules);
+		// if($this->form_validation->run() == FALSE)
+		// {
+		// 	echo "gagal validation";
+		// 	$this->load->view('register_view2');
+		// }
+		// else
+		// {
 			$u = new User();
 
-			$u->Name = $this->input->post('nama');
-			$u->Email = $this->input->post('email');
-			$u->Password = md5($this->input->post('password'));
-			$u->Phone_Number = $this->input->post('phone');
-			$u->Flag = 1;
+			$u->nama = $this->input->post('r_nama');
+			$u->email = $this->input->post('r_email');
+			$u->password = md5($this->input->post('r_password'));
+			$u->phone_number = $this->input->post('r_phone');
+			$u->flag = 1;
+			// echo "inputnya ".$u->nama.$u->email.$u->password.$u->phone_number.$u->flag;
 
-			$u->save();
-			echo "berhasil di register ".$u->Name.$u->Email.$u->Password.$u->Phone_Number.$u->Flag;
-		}
+			if ($u->save()){
+				$data['notif']="Pendaftaran Berhasil";
+				$data['notifmsg']="Selamat datang <b>".$u->nama."</b>. Silahkan login!";
+				$this->load->view('beranda_view',$data);
+			} else {
+
+				$data['notif']="Pendaftaran gagal";
+				$data['notifmsg']="Silahkan periksa input<br>".$u->error->string;
+				$this->load->view('register_view',$data);
+			}
+		// }
 	}
 
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect(site_url());
+		redirect("beranda");
 	}
 }

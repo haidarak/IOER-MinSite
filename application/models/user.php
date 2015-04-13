@@ -35,10 +35,10 @@ class User extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that User can have just one of.
-	var $has_one = array('member','manager','tutor');
+	var $has_one = array();
 
 	// Insert related models that User can have more than one of.
-	var $has_many = array();
+	var $has_many = array('member','manager','tutor');
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
@@ -63,13 +63,32 @@ class User extends DataMapper {
 	//   Add validation requirements, such as 'required', for your fields.
 	// --------------------------------------------------------------------
 
-	var $validation = array(
-		'example' => array(
-			// example is required, and cannot be more than 120 characters long.
-			'rules' => array('required', 'max_length' => 120),
-			'label' => 'Example'
-		)
-	);
+	// var $validation = array(
+	// 	'example' => array(
+	// 		// example is required, and cannot be more than 120 characters long.
+	// 		'rules' => array('required', 'max_length' => 120),
+	// 		'label' => 'Example'
+	// 	)
+	// );
+
+var $validation = array(
+    'nama' => array(
+        'label' => 'Nama Lengkap',
+        'rules' => array()
+    ),
+    'password' => array(
+        'label' => 'Password',
+        'rules' => array( 'trim')
+    ),
+    'email' => array(
+        'label' => 'Email Address',
+        'rules' => array( 'trim', 'unique', 'valid_email')
+    ),
+    'phone_number' => array(
+        'label' => 'No Handphone',
+        'rules' => array( 'trim',)
+    ),
+);
 
 	// --------------------------------------------------------------------
 	// Default Ordering
