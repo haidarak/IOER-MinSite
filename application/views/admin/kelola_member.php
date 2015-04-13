@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>Indonesia Open Educational Resource</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+      <!--grocery -->
+      <?php
+      foreach($css_files as $file): ?>
+          <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+
+      <?php endforeach; ?>
+      <?php foreach($js_files as $file): ?>
+
+          <script src="<?php echo $file; ?>"></script>
+      <?php endforeach; ?>
     <!-- Bootstrap 3.3.2 -->
     <link href="<?php echo asset_url();?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -95,6 +105,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
+
             <li class="treeview active">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Manajer User</span> <i class="fa fa-angle-left pull-right"></i>
@@ -102,7 +113,7 @@
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i> View Registrasi</a></li>
                 <li class="active"><a href="<?php echo base_url('admin/kelola_member'); ?>"><i class="fa fa-circle-o"></i> Kelola Member</a></li>
-                <li><a href="ubah-member-layanan.html"><i class="fa fa-circle-o"></i> Deaktivasi User dari Layanan</a></li>
+                <li><a href="<?php echo base_url('admin/ubah_member_layanan'); ?>"><i class="fa fa-circle-o"></i> Deaktivasi User dari Layanan</a></li>
               </ul>
             </li>
           </ul>
@@ -129,77 +140,7 @@
         <!-- Your Page Content Here -->
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
-            <!-- Daftar kelas box-->
-            
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title">Daftar Member</h3>
-              </div><!-- /.box-header -->
-              <div class="box-body">
-                <table id="tableCourse" class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th class="col-md-1">ID</th>
-                      <th class="col-md-6">Nama</th>
-                      <th char="col-md-1">Kelola</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1206242113</td>
-                      <td>Dahru Dzahaban</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>1206242424</td>
-                      <td>Haidar Aji</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>12062432131</td>
-                      <td>Haritzty Azka</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>12062424124</td>
-                      <td>Rizda Dwi</td>
-                      <td>
-                        <!-- CRUD Element -->
-                        <div class="text-center hidden-phone">
-                          <a href="#"><button class="btn btn-success btn-xs"><i class=" fa fa-eye"></i></button></a>
-                          <a href="kelolaCourse.html"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
-                          <a href="#"><button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapusMemberModal"><i class="fa fa-trash-o "></i></button></a>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div><!-- /.box-body -->
-              <div class="box-footer">
-                <a href="<?php echo base_url('admin/tambah_member'); ?>"><button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; Tambah Member</button></a>
-              </div> <!-- box footer -->
-            </div><!-- /.box -->
+           <?php echo $output; ?>
           </div>
         </div> <!-- row -->
       </section><!-- /.content -->

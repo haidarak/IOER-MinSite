@@ -40,6 +40,7 @@ class Member extends DataMapper {
 	// Insert related models that Member can have more than one of.
 	var $has_many = array('course','layanan','membercertificate');
 
+
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
 	 *   $has_one = array('user'); // Member has one User

@@ -19,7 +19,27 @@ class Kelola_Member extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->view('admin/kelola_member');
+        $this->load->library('grocery_CRUD');
+
+        $listMember = new grocery_CRUD();
+
+        $listMember->set_table('members')
+            ->set_subject('Daftar Member');
+        $listMember->set_relation('user_id', 'users', 'id');
+        $listMember->columns('user_id','nama','email','status_member','jenis_kelamin','tanggal_lahir');
+        $listMember->display_as('user_id', 'ID');
+        $listMember->display_as('nama', 'Nama');
+        $listMember->display_as('email', 'Email');
+        $listMember->display_as('status_member', 'Status');
+        $listMember->display_as('jenis_kelamin', 'Laki-Laki/Perempuan');
+        $listMember->display_as('pt_asal', 'Perusahaan Asal');
+        $listMember->display_as('nim_asal', 'NIM Asal');
+        $listMember->display_as('tanggal_lahir', 'Tanggal Lahir');
+        $listMember->set_crud_url_path('tambah_member');
+
+
+        $output = $listMember->render();
+        $this->load->view('admin/kelola_member', $output);
 	}
 
 }

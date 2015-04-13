@@ -19,6 +19,20 @@ class Kelola_Term extends CI_Controller {
 	 */
 	public function index()
 	{
+        $this->load->library('grocery_CRUD');
+
+        $listTerm = new grocery_CRUD();
+        $listTerm->set_table('terms')
+            ->set_subject('Daftar Term')
+            ->columns('id','semester','awal_term','akhir_term');
+        $listTerm->display_as('semester', 'Semester');
+        $listTerm->display_as('id', 'ID');
+        $listTerm->display_as('awal_term','Tanggal Mulai');
+        $listTerm->display_as('akhir_term','Tanggal Selesai');
+//        $listLayanan->set_relation('term_id', 'terms', 'id');
+
+        $output = $listTerm->render();
+        $this->load->view('admin/kelola_term', $output);
         $this->load->view('admin/kelola_term');
 	}
 

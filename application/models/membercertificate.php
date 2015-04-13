@@ -35,7 +35,11 @@ class Membercertificate extends DataMapper {
 	// --------------------------------------------------------------------
 
 	// Insert related models that Tembercertificate can have just one of.
+<<<<<<< HEAD
 	var $has_one = array('member');
+=======
+	var $has_one = array();
+>>>>>>> azka
 
 	// Insert related models that Tembercertificate can have more than one of.
 	var $has_many = array();

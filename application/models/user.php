@@ -40,6 +40,7 @@ class User extends DataMapper {
 	// Insert related models that User can have more than one of.
 	var $has_many = array('member','manager','tutor');
 
+
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:
 	 *   $has_one = array('user'); // User has one User
@@ -63,6 +64,7 @@ class User extends DataMapper {
 	//   Add validation requirements, such as 'required', for your fields.
 	// --------------------------------------------------------------------
 
+<<<<<<< HEAD
 	// var $validation = array(
 	// 	'example' => array(
 	// 		// example is required, and cannot be more than 120 characters long.
@@ -89,6 +91,15 @@ var $validation = array(
         'rules' => array( 'trim',)
     ),
 );
+=======
+	var $validation = array(
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
+		)
+	);
+>>>>>>> azka
 
 	// --------------------------------------------------------------------
 	// Default Ordering

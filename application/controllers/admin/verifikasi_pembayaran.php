@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Kelola_Layanan extends CI_Controller {
+class Verifikasi_Pembayaran extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,21 +18,11 @@ class Kelola_Layanan extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+    {
 
-        $this->load->library('grocery_CRUD');
-
-        $listLayanan = new grocery_CRUD();
-
-        $listLayanan->set_table('layanans')
-        ->set_subject('Daftar Layanan')
-        ->columns('id','nama','jenis','biaya','deskripsi','term_id');
-        $listLayanan->display_as('term_id', 'Term');
-        $listLayanan->display_as('id', 'ID');
-        $listLayanan->set_relation('term_id', 'terms', 'id');
-
-        $output = $listLayanan->render();
-        $this->load->view('admin/kelola_layanan', $output);
+        $listMember = new Member();
+        $listMember->get(1,10);
+        $this->load->view('admin/verifikasi_pembayaran', $listMember);
 	}
 
 }

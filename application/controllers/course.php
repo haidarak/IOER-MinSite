@@ -20,6 +20,7 @@ class Course extends CI_Controller {
 	public function index()
 	{
       redirect('courses');
+
 	}
 
 }
