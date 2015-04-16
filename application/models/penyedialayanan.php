@@ -38,11 +38,7 @@ class Penyedialayanan extends DataMapper {
 	var $has_one = array();
 
 	// Insert related models that Penyedialayanan can have more than one of.
-<<<<<<< HEAD
 	var $has_many = array('layanan');
-=======
-	var $has_many = array();
->>>>>>> azka
 
 	/* Relationship Examples
 	 * For normal relationships, simply add the model name to the array:

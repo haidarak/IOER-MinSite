@@ -33,7 +33,7 @@ class Kelola_Term extends CI_Controller {
 
         $output = $listTerm->render();
         $this->load->view('admin/kelola_term', $output);
-        $this->load->view('admin/kelola_term');
+        // $this->load->view('admin/kelola_term');
 	}
 
 }

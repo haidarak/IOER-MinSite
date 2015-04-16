@@ -109,8 +109,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i> View Registrasi</a></li>
-                <li class="active"><a href="<?php echo base_url('admin/kelola_member'); ?>"><i class="fa fa-circle-o"></i> Kelola Member</a></li>
-                <li><a href="<?php echo base_url('admin/kelola_member_tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Member</a></li>
+                <li><a href="<?php echo base_url('admin/kelola_member'); ?>"><i class="fa fa-circle-o"></i> Kelola Member</a></li>
+                <li class="active"><a href="<?php echo base_url('admin/kelola_member_tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Member</a></li>
                 <li><a href="<?php echo base_url('admin/ubah_member_layanan'); ?>"><i class="fa fa-circle-o"></i> Deaktivasi User dari Layanan</a></li>
               </ul>
             </li>

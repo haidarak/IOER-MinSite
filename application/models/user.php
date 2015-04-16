@@ -63,8 +63,6 @@ class User extends DataMapper {
 	// Validation
 	//   Add validation requirements, such as 'required', for your fields.
 	// --------------------------------------------------------------------
-
-<<<<<<< HEAD
 	// var $validation = array(
 	// 	'example' => array(
 	// 		// example is required, and cannot be more than 120 characters long.
@@ -91,15 +89,6 @@ var $validation = array(
         'rules' => array( 'trim',)
     ),
 );
-=======
-	var $validation = array(
-		'example' => array(
-			// example is required, and cannot be more than 120 characters long.
-			'rules' => array('required', 'max_length' => 120),
-			'label' => 'Example'
-		)
-	);
->>>>>>> azka
 
 	// --------------------------------------------------------------------
 	// Default Ordering
