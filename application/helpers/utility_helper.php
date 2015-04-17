@@ -5,7 +5,7 @@
 	}
 
 	function baseindex_url() {
-		return base_url().'/';
+		return base_url().index_page().'/';
 	}
 
 ?>

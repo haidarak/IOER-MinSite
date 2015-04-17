@@ -64,13 +64,13 @@ class Member extends DataMapper {
 	//   Add validation requirements, such as 'required', for your fields.
 	// --------------------------------------------------------------------
 
-	// var $validation = array(
-	// 	'example' => array(
-	// 		// example is required, and cannot be more than 120 characters long.
-	// 		'rules' => array('required', 'max_length' => 120),
-	// 		'label' => 'Example'
-	// 	)
-	// );
+	var $validation = array(
+		'example' => array(
+			// example is required, and cannot be more than 120 characters long.
+			'rules' => array('required', 'max_length' => 120),
+			'label' => 'Example'
+		)
+	);
 
 	// --------------------------------------------------------------------
 	// Default Ordering

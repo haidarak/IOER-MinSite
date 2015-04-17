@@ -11,7 +11,10 @@
           <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 
       <?php endforeach; ?>
-      
+      <?php foreach($js_files as $file): ?>
+
+          <script src="<?php echo $file; ?>"></script>
+      <?php endforeach; ?>
     <!-- Bootstrap 3.3.2 -->
     <link href="<?php echo asset_url();?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -38,7 +41,7 @@
   <body class="skin-blue">
     <div class="wrapper">
       <header class="main-header"> 
-        <a href="<?php echo base_url(); ?>" class="logo">IOER</a>
+        <a href="<?php echo asset_url();?><?php echo asset_url();?>index2.html" class="logo">IOER</a>
         <nav class="navbar navbar-static-top">
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -174,12 +177,8 @@
         </div>
       </div>
     </div>
-    <?php foreach($js_files as $file): ?>
-
-          <script src="<?php echo $file; ?>"></script>
-      <?php endforeach; ?>
     <!-- jQuery 2.1.3 -->
-    <!-- <script src="<?php echo asset_url();?>plugins/jQuery/jQuery-2.1.3.min.js"></script> -->
+    <script src="<?php echo asset_url();?>plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="<?php echo asset_url();?>bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- SlimScroll -->
@@ -188,6 +187,5 @@
     <script src='<?php echo asset_url();?>plugins/fastclick/fastclick.min.js'></script>
     <!-- AdminLTE App -->
     <script src="<?php echo asset_url();?>dist/js/app.min.js" type="text/javascript"></script> 
-    
   </body>
 </html>

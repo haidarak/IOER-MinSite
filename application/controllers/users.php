@@ -92,20 +92,14 @@ class Users extends CI_Controller {
 			$u->password = md5($this->input->post('r_password'));
 			$u->phone_number = $this->input->post('r_phone');
 			$u->flag = 1;
-
-
 			// echo "inputnya ".$u->nama.$u->email.$u->password.$u->phone_number.$u->flag;
 
 			if ($u->save()){
-				$m = new Member();
-				$m->user_id=$u->id;
-				$m->save();
-				// echo $u->id;
-
 				$data['notif']="Pendaftaran Berhasil";
 				$data['notifmsg']="Selamat datang <b>".$u->nama."</b>. Silahkan login!";
 				$this->load->view('beranda_view',$data);
 			} else {
+
 				$data['notif']="Pendaftaran gagal";
 				$data['notifmsg']="Silahkan periksa input<br>".$u->error->string;
 				$this->load->view('register_view',$data);
