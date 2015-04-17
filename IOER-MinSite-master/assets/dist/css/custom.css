@@ -1,0 +1,7 @@
+.text-no-margin {
+    margin-bottom: 0px;
+}
+
+#profile-photo > img {
+    width: 100%
+}
